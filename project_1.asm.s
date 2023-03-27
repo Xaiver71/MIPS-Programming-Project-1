@@ -23,3 +23,8 @@ bge $s2, 97, lowercaseU
 bge $s2, 65, uppercaseU
 bge $s2, 48, numbers 
 
+counter:
+addi $t3, $t3, 1
+lb $s2, ($t3)
+j checkInput
+
