@@ -19,12 +19,18 @@ beq $t0, 10, output
 
 sort_numbers:
 addi $t0, $t0, 1
-bge $s2, 97, lowercaseU
-bge $s2, 65, uppercaseU
+bge $s2, 97, lowercaseNum
+bge $s2, 65, uppercaseNum
 bge $s2, 48, numbers 
 
 counter:
 addi $t3, $t3, 1
 lb $s2, ($t3)
 j checkInput
+
+uppercaseNum:
+bge $s2, 85, counter
+sub $s2, $s2, 55
+add $s3, $s3, $s2
+j counter
 
