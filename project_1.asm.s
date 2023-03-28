@@ -34,3 +34,15 @@ sub $s2, $s2, 55
 add $s3, $s3, $s2
 j counter
 
+lowercaseNum:
+bge $s2, 117, counter
+sub $s2, $s2, 87
+add $s3, $s3, $s2
+j counter
+
+numbers:
+bge $s2, 48, counter
+sub $s2, $s2, 48
+add $s3, $s3, $s2
+j counter
+
